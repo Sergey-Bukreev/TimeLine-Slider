@@ -1,1 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@supports (-webkit-appearance: none) {
+  .example {
+    background-color: #f0f0f0;
+    color: #333333;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .example {
+      background-color: #d4e0f5;
+      color: #1a3d7c;
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .example {
+    background-color: #fff4d4;
+    color: #ff9800;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .example {
+    background-color: #e5f6d4;
+    color: #1b5e20;
+  }
+}
+
+@media (max-width: 768px) {
+  .example {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
 

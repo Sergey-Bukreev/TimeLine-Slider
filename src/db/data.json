@@ -1,0 +1,190 @@
+ [
+  {
+    "id": "period1",
+    "name": "Event 1",
+    "startDate": "2023",
+    "endDate": "2024",
+    "events": [
+      {
+        "id": "event1",
+        "title": "Event 1A",
+        "description": "This is the first event in period 1."
+      },
+      {
+        "id": "event2",
+        "title": "Event 1B",
+        "description": "This is the second event in period 1."
+      },
+      {
+        "id": "event3",
+        "title": "Event 1C",
+        "description": "This is the third event in period 1."
+      },
+      {
+        "id": "event4",
+        "title": "Event 1D",
+        "description": "This is the fourth event in period 1."
+      }
+    ]
+  },
+  {
+    "id": "period2",
+    "name": "Event 2",
+    "startDate": "2022",
+    "endDate": "2023",
+    "events": [
+      {
+        "id": "event5",
+        "title": "Event 2A",
+        "description": "Description for event 2A."
+      },
+      {
+        "id": "event6",
+        "title": "Event 2B",
+        "description": "Description for event 2B."
+      },
+      {
+        "id": "event7",
+        "title": "Event 2C",
+        "description": "Description for event 2C."
+      },
+      {
+        "id": "event8",
+        "title": "Event 2D",
+        "description": "Description for event 2D."
+      },
+      {
+        "id": "event9",
+        "title": "Event 2E",
+        "description": "Description for event 2E."
+      }
+    ]
+  },
+  {
+    "id": "period3",
+    "name": "Event 3",
+    "startDate": "2020",
+    "endDate": "2021",
+    "events": [
+      {
+        "id": "event10",
+        "title": "Event 3A",
+        "description": "Event 3A description."
+      },
+      {
+        "id": "event11",
+        "title": "Event 3B",
+        "description": "Event 3B description."
+      },
+      {
+        "id": "event12",
+        "title": "Event 3C",
+        "description": "Event 3C description."
+      },
+      {
+        "id": "event13",
+        "title": "Event 3D",
+        "description": "Event 3D description."
+      },
+      {
+        "id": "event14",
+        "title": "Event 3E",
+        "description": "Event 3E description."
+      }
+    ]
+  },
+  {
+    "id": "period4",
+    "name": "Event 4",
+    "startDate": "2010",
+    "endDate": "2020",
+    "events": [
+      {
+        "id": "event15",
+        "title": "Event 4A",
+        "description": "Event 4A description."
+      },
+      {
+        "id": "event16",
+        "title": "Event 4B",
+        "description": "Event 4B description."
+      },
+      {
+        "id": "event17",
+        "title": "Event 4C",
+        "description": "Event 4C description."
+      }
+    ]
+  },
+  {
+    "id": "period5",
+    "name": "Event 5",
+    "startDate": "1994",
+    "endDate": "2000",
+    "events": [
+      {
+        "id": "event18",
+        "title": "Event 5A",
+        "description": "Event 5A description."
+      },
+      {
+        "id": "event19",
+        "title": "Event 5B",
+        "description": "Event 5B description."
+      },
+      {
+        "id": "event20",
+        "title": "Event 5C",
+        "description": "Event 5C description."
+      },
+      {
+        "id": "event21",
+        "title": "Event 5D",
+        "description": "Event 5D description."
+      },
+      {
+        "id": "event22",
+        "title": "Event 5E",
+        "description": "Event 5E description."
+      }
+    ]
+  },
+  {
+    "id": "period6",
+    "name": "Event 6",
+    "startDate": "2007",
+    "endDate": "2010",
+    "events": [
+      {
+        "id": "event23",
+        "title": "Event 6A",
+        "description": "Event 6A description."
+      },
+      {
+        "id": "event24",
+        "title": "Event 6B",
+        "description": "Event 6B description."
+      },
+      {
+        "id": "event25",
+        "title": "Event 6C",
+        "description": "Event 6C description."
+      },
+      {
+        "id": "event26",
+        "title": "Event 6D",
+        "description": "Event 6D description."
+      },
+      {
+        "id": "event27",
+        "title": "Event 6E",
+        "description": "Event 6E description."
+      },
+      {
+        "id": "event28",
+        "title": "Event 6F",
+        "description": "Event 6F description."
+      }
+    ]
+  }
+]

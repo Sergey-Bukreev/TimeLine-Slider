@@ -18,20 +18,20 @@ export const buildLoaders = (isDev: boolean): webpack.RuleSetRule[] => {
       },
     ],
   };
-  const cssLoaderWithModule = {
-    loader: 'css-loader',
-    options: {
-      modules: {
-        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
-      },
-      esModule: false,
-    },
-  };
   const cssLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.(c|sa|sc)ss$/i,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      cssLoaderWithModule,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            auto: /\.module\.\w+$/i, // Включать модули только для файлов, содержащих .module.
+            localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+          },
+          esModule: false,
+        },
+      },
       'sass-loader',
     ],
   };

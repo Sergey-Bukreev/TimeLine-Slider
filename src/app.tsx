@@ -1,8 +1,12 @@
-const App = () => {
+import React from 'react';
+import { TimeLinePage } from '@/pages/timeline/TimeLine.page';
+
+const App: React.FC = () => {
   return (
     <div>
-      <h1>{'Hello World'}</h1>
+      <TimeLinePage />
     </div>
   );
 };
+
 export default App;

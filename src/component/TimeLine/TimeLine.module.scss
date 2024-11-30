@@ -1,0 +1,31 @@
+.timeLine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.timeLine::before,
+.timeLine::after {
+  content: '';
+  position: absolute;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+.timeLine::before {
+  width: 100%;
+  height: 1px;
+  top: calc(50% - 104px);
+}
+
+.timeLine::after {
+  height: 100%;
+  width: 1px;
+  left: 50%;
+}

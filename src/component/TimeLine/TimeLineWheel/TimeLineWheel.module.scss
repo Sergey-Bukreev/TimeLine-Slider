@@ -1,0 +1,68 @@
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.timelineCircle {
+  position: relative;
+  width: 530px;
+  height: 530px;
+  border: 1px solid #42567A;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.timelinePoint {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.timelinePoint.active {
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timelinePoint:hover {
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  pointer-events: none;
+}
+//.periodDates {
+//  display: flex;
+//  width: 974px;
+//  height: 160px;
+//  justify-content: space-between;
+//  gap: 24px;
+//  font-weight: 700;
+//  font-size: 200px;
+//  line-height: 80%;
+//  letter-spacing: -0.02em;
+//  text-align: center;
+//}
+
+
