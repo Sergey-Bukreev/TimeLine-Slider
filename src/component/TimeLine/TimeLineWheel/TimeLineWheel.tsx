@@ -1,16 +1,17 @@
 import React, { useRef, useState } from 'react';
 import styles from './TimelineWheel.module.scss';
 import gsap from 'gsap';
+import { Period } from '@/db/db.types';
 
 interface TimelineWheelProps {
-  periods: Array<{ id: string }>;
-  activePeriodId: string;
+  periods: Period[];
+  activePeriod: Period;
   onChangePeriod: (id: string) => void;
 }
 
 export const TimelineWheel: React.FC<TimelineWheelProps> = ({
   periods,
-  activePeriodId,
+  activePeriod,
   onChangePeriod,
 }) => {
   const [rotationAngle, setRotationAngle] = useState(0);
@@ -60,7 +61,7 @@ export const TimelineWheel: React.FC<TimelineWheelProps> = ({
       const angle = anglePerPoint * index - 60;
       const x = Math.cos((angle * Math.PI) / 180) * 265;
       const y = Math.sin((angle * Math.PI) / 180) * 265;
-      const isActive = activePeriodId === id;
+      const isActive = activePeriod.id === id;
       const isHovered = hoveredPeriodId === id;
       const inverseRotationAngle = -rotationAngle;
 
@@ -96,6 +97,13 @@ export const TimelineWheel: React.FC<TimelineWheelProps> = ({
       <div ref={circleRef} className={styles.timelineCircle}>
         {renderCirclePoints()}
       </div>
+
+      {activePeriod && (
+        <div className={styles.periodDetails}>
+          <span className={styles.startDate}>{activePeriod.startDate}</span>
+          <span className={styles.endDate}>{activePeriod.endDate}</span>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,18 +1,19 @@
-.timelineContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+//.timelineContainer {
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//}
+
 .timelineCircle {
   position: relative;
-  width: 530px;
-  height: 530px;
-  border: 1px solid #42567A;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 530px;
+  height: 530px;
+  border: 1px solid rgba(66, 86, 122, 0.2);
+  border-radius: 50%;
   margin-bottom: 20px;
 
 }
@@ -21,7 +22,7 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #333;
+  background-color: #42567a;
   border-radius: 50%;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -31,7 +32,7 @@
   width: 56px;
   height: 56px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(48, 62, 88, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +41,7 @@
   width: 56px;
   height: 56px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(48, 62, 88, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,17 +53,26 @@
   color: black;
   pointer-events: none;
 }
-//.periodDates {
-//  display: flex;
-//  width: 974px;
-//  height: 160px;
-//  justify-content: space-between;
-//  gap: 24px;
-//  font-weight: 700;
-//  font-size: 200px;
-//  line-height: 80%;
-//  letter-spacing: -0.02em;
-//  text-align: center;
-//}
+.periodDetails {
+  position: absolute;
+  top: calc(50% - 104px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 80%;
+  text-align: center;
+  letter-spacing:-0.02em ;
+  display: flex;
+  flex-direction: row;
+  width: 973px;
+  justify-content: space-around;
+  z-index: -2;
 
-
+  .startDate {
+    color: #5D5FEF;
+  }
+  .endDate {
+    color: #EF5DA8;
+  }
+}

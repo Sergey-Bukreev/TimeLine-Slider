@@ -8,13 +8,38 @@
   height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+
+  .labelWrapper {
+    position: absolute;
+    left: 0;
+    top: 12.5%;
+    width: 354px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    color: #42567a;
+    margin-left: 100px;
+
+
+  }
+  .labelWrapper::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #5d5fef, #ef5da8);
+    left: -100px;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
 }
 
 .timeLine::before,
 .timeLine::after {
   content: '';
   position: absolute;
-  background-color: #ddd;
+  background-color: rgba(66, 86, 122, 0.1);
   z-index: 0;
 }
 

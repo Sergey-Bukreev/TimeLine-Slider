@@ -3,6 +3,7 @@ import { TimelineData } from '@/db/db.types';
 import s from './TimeLine.module.scss';
 import { TimelineWheel } from '@/component/TimeLine/TimeLineWheel';
 import { EventSlider } from '@/component/TimeLine/EventsSlider';
+
 interface TimelineProps {
   periods: TimelineData;
 }
@@ -14,9 +15,12 @@ export const Timeline: React.FC<TimelineProps> = ({ periods }) => {
 
   return (
     <div className={s.timeLine}>
+      <div className={s.labelWrapper}>
+        <span className={s.label}>{'Исторические даты'}</span>
+      </div>
       <TimelineWheel
         periods={periods}
-        activePeriodId={activePeriodId}
+        activePeriod={activePeriod!}
         onChangePeriod={setActivePeriodId}
       />
 
