@@ -12,7 +12,7 @@
   align-items: center;
   width: 530px;
   height: 530px;
-  border: 1px solid rgba(66, 86, 122, 0.2);
+  border: 1px solid var(--color-secondary-op02);
   border-radius: 50%;
   margin-bottom: 20px;
 
@@ -22,7 +22,7 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #42567a;
+  background-color: var(--color-seconary);
   border-radius: 50%;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -31,8 +31,8 @@
 .timelinePoint.active {
   width: 56px;
   height: 56px;
-  background-color: white;
-  border: 1px solid rgba(48, 62, 88, 0.5);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-secondary-op05);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,7 @@
   width: 56px;
   height: 56px;
   background-color: white;
-  border: 1px solid rgba(48, 62, 88, 0.5);
+  border: 1px solid var(--color-secondary-op05);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,8 +49,8 @@
 
 .index {
   font-size: 16px;
-  font-weight: bold;
-  color: black;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-seconary);
   pointer-events: none;
 }
 .periodDetails {
@@ -59,7 +59,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 200px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 80%;
   text-align: center;
   letter-spacing:-0.02em ;
@@ -70,9 +70,9 @@
   z-index: -2;
 
   .startDate {
-    color: #5D5FEF;
+    color: var(--color-accent-2);
   }
   .endDate {
-    color: #EF5DA8;
+    color: var(--color-accent-3);
   }
 }

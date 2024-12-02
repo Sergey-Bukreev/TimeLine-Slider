@@ -1,189 +1,194 @@
- [
+[
   {
     "id": "period1",
-    "name": "Event 1",
-    "startDate": "2023",
-    "endDate": "2024",
+    "name": "1990-2000",
+    "startDate": "1990",
+    "endDate": "2000",
     "events": [
       {
         "id": "event1",
-        "title": "Event 1A",
-        "description": "This is the first event in period 1."
+        "title": "1991",
+        "description": "В 1991 году был представлен первый веб-сайт, который стал основой для будущего интернета.В 1991 году был представлен первый веб-сайт, который стал основой для будущего интернета."
       },
       {
         "id": "event2",
-        "title": "Event 1B",
-        "description": "This is the second event in period 1."
+        "title": "1994",
+        "description": "В 1994 году был запущен первый коммерчески успешный браузер Netscape, что способствовало популяризации интернета."
       },
       {
         "id": "event3",
-        "title": "Event 1C",
-        "description": "This is the third event in period 1."
+        "title": "1995",
+        "description": "В 1995 году была основана компания Amazon, ставшая крупнейшим интернет-ритейлером в мире."
       },
       {
         "id": "event4",
-        "title": "Event 1D",
-        "description": "This is the fourth event in period 1."
+        "title": "1997",
+        "description": "В 1997 году был запущен сайт для обмена видео, который в дальнейшем стал YouTube."
+      },
+      {
+        "id": "event5",
+        "title": "1998",
+        "description": "В 1998 году был основан Google, который в дальнейшем стал самым популярным поисковиком в мире."
       }
     ]
   },
   {
     "id": "period2",
-    "name": "Event 2",
-    "startDate": "2022",
-    "endDate": "2023",
+    "name": "2000-2010",
+    "startDate": "2000",
+    "endDate": "2010",
     "events": [
       {
-        "id": "event5",
-        "title": "Event 2A",
-        "description": "Description for event 2A."
-      },
-      {
         "id": "event6",
-        "title": "Event 2B",
-        "description": "Description for event 2B."
+        "title": "2001",
+        "description": "В 2001 году был выпущен Windows XP, который стал одной из самых популярных операционных систем в истории."
       },
       {
         "id": "event7",
-        "title": "Event 2C",
-        "description": "Description for event 2C."
+        "title": "2004",
+        "description": "В 2004 году был основан Facebook, который стал одной из самых популярных социальных сетей в мире."
       },
       {
         "id": "event8",
-        "title": "Event 2D",
-        "description": "Description for event 2D."
+        "title": "2007",
+        "description": "В 2007 году Apple представила первый iPhone, революционизировавший мобильные технологии."
       },
       {
         "id": "event9",
-        "title": "Event 2E",
-        "description": "Description for event 2E."
+        "title": "2008",
+        "description": "В 2008 году был представлен Android, что привело к массовому распространению операционной системы для мобильных устройств."
+      },
+      {
+        "id": "event10",
+        "title": "2009",
+        "description": "В 2009 году был запущен сервис для обмена фотографиями Instagram."
       }
     ]
   },
   {
     "id": "period3",
-    "name": "Event 3",
-    "startDate": "2020",
-    "endDate": "2021",
+    "name": "2010-2020",
+    "startDate": "2010",
+    "endDate": "2020",
     "events": [
       {
-        "id": "event10",
-        "title": "Event 3A",
-        "description": "Event 3A description."
-      },
-      {
         "id": "event11",
-        "title": "Event 3B",
-        "description": "Event 3B description."
+        "title": "2012",
+        "description": "В 2012 году Tesla представила Model S, электромобиль, который стал символом нового подхода к экологичному транспорту."
       },
       {
         "id": "event12",
-        "title": "Event 3C",
-        "description": "Event 3C description."
+        "title": "2014",
+        "description": "В 2014 году был выпущен первый коммерческий смартфон с технологией отпечатков пальцев."
       },
       {
         "id": "event13",
-        "title": "Event 3D",
-        "description": "Event 3D description."
+        "title": "2016",
+        "description": "В 2016 году был представлен первый массовый продукт с технологией виртуальной реальности — Oculus Rift."
       },
       {
         "id": "event14",
-        "title": "Event 3E",
-        "description": "Event 3E description."
+        "title": "2018",
+        "description": "В 2018 году было объявлено о запуске беспилотных автомобилей Tesla, что стало важной вехой в разработке автономного транспорта."
+      },
+      {
+        "id": "event15",
+        "title": "2019",
+        "description": "В 2019 году был представлен iPhone 11, который стал первым смартфоном с тройной камерой и улучшенной производительностью."
       }
     ]
   },
   {
     "id": "period4",
-    "name": "Event 4",
-    "startDate": "2010",
-    "endDate": "2020",
+    "name": "1980-1990",
+    "startDate": "1980",
+    "endDate": "1990",
     "events": [
       {
-        "id": "event15",
-        "title": "Event 4A",
-        "description": "Event 4A description."
-      },
-      {
         "id": "event16",
-        "title": "Event 4B",
-        "description": "Event 4B description."
+        "title": "1981",
+        "description": "В 1981 году был выпущен первый персональный компьютер IBM, что дало старт массовому распространению ПК."
       },
       {
         "id": "event17",
-        "title": "Event 4C",
-        "description": "Event 4C description."
+        "title": "1983",
+        "description": "В 1983 году был запущен интернет-протокол TCP/IP, который стал основой для глобальной сети."
+      },
+      {
+        "id": "event18",
+        "title": "1984",
+        "description": "В 1984 году был представлен первый Macintosh от Apple, который сделал персональные компьютеры доступными для широкого круга пользователей."
+      },
+      {
+        "id": "event19",
+        "title": "1989",
+        "description": "В 1989 году был предложен первый концепт Всемирной паутины (World Wide Web) Тимом Бернерс-Ли."
+      },
+      {
+        "id": "event20",
+        "title": "1985",
+        "description": "В 1985 году был запущен Microsoft Windows 1.0, который стал основой для всех будущих версий Windows."
       }
     ]
   },
   {
     "id": "period5",
-    "name": "Event 5",
-    "startDate": "1994",
+    "name": "1990-2000",
+    "startDate": "1990",
     "endDate": "2000",
     "events": [
       {
-        "id": "event18",
-        "title": "Event 5A",
-        "description": "Event 5A description."
-      },
-      {
-        "id": "event19",
-        "title": "Event 5B",
-        "description": "Event 5B description."
-      },
-      {
-        "id": "event20",
-        "title": "Event 5C",
-        "description": "Event 5C description."
-      },
-      {
         "id": "event21",
-        "title": "Event 5D",
-        "description": "Event 5D description."
+        "title": "1995",
+        "description": "В 1995 году был представлен первый веб-браузер Microsoft Internet Explorer, который стал массовым инструментом для пользования интернетом."
       },
       {
         "id": "event22",
-        "title": "Event 5E",
-        "description": "Event 5E description."
+        "title": "1997",
+        "description": "В 1997 году был создан сайт для онлайн-магазинов eBay, который стал одним из первых мировых лидеров в сфере онлайн-торговли."
+      },
+      {
+        "id": "event23",
+        "title": "1998",
+        "description": "В 1998 году был основан Google, который в дальнейшем стал самым популярным поисковиком в мире."
+      },
+      {
+        "id": "event24",
+        "title": "1999",
+        "description": "В 1999 году был запущен сервис для обмена файлами Napster, который открыл новую эру в обмене музыкой и контентом."
       }
     ]
   },
   {
     "id": "period6",
-    "name": "Event 6",
-    "startDate": "2007",
+    "name": "2000-2010",
+    "startDate": "2000",
     "endDate": "2010",
     "events": [
       {
-        "id": "event23",
-        "title": "Event 6A",
-        "description": "Event 6A description."
-      },
-      {
-        "id": "event24",
-        "title": "Event 6B",
-        "description": "Event 6B description."
-      },
-      {
         "id": "event25",
-        "title": "Event 6C",
-        "description": "Event 6C description."
+        "title": "2004",
+        "description": "В 2004 году был представлен Facebook, что значительно изменило способы общения и взаимодействия людей по всему миру."
       },
       {
         "id": "event26",
-        "title": "Event 6D",
-        "description": "Event 6D description."
+        "title": "2006",
+        "description": "В 2006 году был запущен сервис YouTube, который стал ведущей платформой для обмена видео."
       },
       {
         "id": "event27",
-        "title": "Event 6E",
-        "description": "Event 6E description."
+        "title": "2007",
+        "description": "В 2007 году был представлен первый iPhone, который стал одним из самых значимых технологических продуктов десятилетия."
       },
       {
         "id": "event28",
-        "title": "Event 6F",
-        "description": "Event 6F description."
+        "title": "2008",
+        "description": "В 2008 году был представлен Android, что привело к массовому распространению операционной системы для мобильных устройств."
+      },
+      {
+        "id": "event29",
+        "title": "2009",
+        "description": "В 2009 году был запущен сервис Twitter, который стал популярным способом для обмена короткими сообщениями в интернете."
       }
     ]
   }

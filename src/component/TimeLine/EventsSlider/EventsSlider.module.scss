@@ -3,20 +3,68 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
+  position: relative;
 }
 
 
 .eventItem {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #f5f5f5;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: auto;
+  background: var(--color-bg);
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 160px;
+  min-width: 320px;
+  max-width: 420px;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor:pointer;
+
+  h3 {
+    font-family: var(--font-family-second-regular), sans-serif;
+    font-weight: var(--font-weight-regular);
+    font-size: 25px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--color-accent-1);
+    margin: 0 0 10px 0;
+
+  }
+
+  p {
+    font-weight: var(--font-weight-regular);
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-seconary);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+  }
+}
+.eventItem:hover {
+  border: 1px solid var(--color-secondary-op05);
+  border-radius: 10px;
+}
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
-
+.prevButton {
+  left: -80px;
+}
+.nextButton {
+  right: -80px;
+}
+.disabled {
+  visibility: hidden;
+  pointer-events: none;
+}
