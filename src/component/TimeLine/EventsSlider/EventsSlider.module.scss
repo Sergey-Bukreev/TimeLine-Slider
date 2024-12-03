@@ -5,7 +5,33 @@
   padding: 20px 0;
   position: relative;
 }
+.controlsWrapper {
+  display: flex;
+  position: absolute;
+  top: -50%;
 
+  flex-direction: column;
+  width: 120px;
+  height: 108px;
+  justify-content: center;
+  gap: 20px;
+
+  span {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: var(--color-seconary);
+  }
+  .buttonsBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .controlButton {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
 
 .eventItem {
   display: flex;
@@ -68,3 +94,5 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+

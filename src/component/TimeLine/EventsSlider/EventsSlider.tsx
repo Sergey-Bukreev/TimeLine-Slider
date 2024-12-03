@@ -14,26 +14,34 @@ interface Event {
 
 interface EventSliderProps {
   events: Event[];
+  handlePrevPeriod: () => void;
+  handleNextPeriod: () => void;
+  periodInfo?: string;
 }
 
-export const EventSlider = ({ events }: EventSliderProps) => {
-  const prevButtonRef = useRef<HTMLButtonElement | null>(null);
-  const nextButtonRef = useRef<HTMLButtonElement | null>(null);
+export const EventSlider = ({
+  events,
+  handlePrevPeriod,
+  handleNextPeriod,
+  periodInfo,
+}: EventSliderProps) => {
+  const prevSlideButtonRef = useRef<HTMLButtonElement | null>(null);
+  const nextSlideButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const sliderSettings: SwiperProps = {
     modules: [Navigation],
     spaceBetween: 20,
     slidesPerView: 3,
     navigation: {
-      prevEl: prevButtonRef.current,
-      nextEl: nextButtonRef.current,
+      prevEl: prevSlideButtonRef.current,
+      nextEl: nextSlideButtonRef.current,
       disabledClass: s.disabled,
     },
     loop: false,
     onInit: (swiper) => {
       if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
-        swiper.params.navigation.prevEl = prevButtonRef.current;
-        swiper.params.navigation.nextEl = nextButtonRef.current;
+        swiper.params.navigation.prevEl = prevSlideButtonRef.current;
+        swiper.params.navigation.nextEl = nextSlideButtonRef.current;
         swiper.navigation.init();
         swiper.navigation.update();
       }
@@ -42,10 +50,21 @@ export const EventSlider = ({ events }: EventSliderProps) => {
 
   return (
     <div className={s.sliderContainer}>
-      <Button ref={prevButtonRef} className={s.prevButton} variant={'secondary'}>
+      <div className={s.controlsWrapper}>
+        {periodInfo && <span>{periodInfo}</span>}
+        <div className={s.buttonsBlock}>
+          <Button onClick={handlePrevPeriod} className={s.controlButton}>
+            {'<'}
+          </Button>
+          <Button onClick={handleNextPeriod} className={s.controlButton}>
+            {'>'}
+          </Button>
+        </div>
+      </div>
+      <Button ref={prevSlideButtonRef} className={s.prevButton} variant={'secondary'}>
         {'<'}
       </Button>
-      <Button ref={nextButtonRef} className={s.nextButton} variant={'secondary'}>
+      <Button ref={nextSlideButtonRef} className={s.nextButton} variant={'secondary'}>
         {'>'}
       </Button>
 
