@@ -23,6 +23,10 @@
     background-color: var(--color-seconary);
     border-color: var(--color-bg);
   }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 .secondary {
@@ -34,5 +38,9 @@
     color: var(--color-bg);
     background-color: var(--color-accent-1);
     border-color: var(--color-bg);
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }

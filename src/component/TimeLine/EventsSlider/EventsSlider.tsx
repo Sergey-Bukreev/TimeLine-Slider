@@ -5,26 +5,15 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import s from './EventsSlider.module.scss';
 import { Button } from '@/component/ui/button';
+import { Event } from '@/db/db.types';
+import { PeriodSlidingSettings } from '@/component/TimeLine/TimeLine';
 
-interface Event {
-  id: string;
-  title: string;
-  description: string;
+interface CustomSliderProps {
+  items: Event[];
+  periodSlidingSettings?: PeriodSlidingSettings;
 }
 
-interface EventSliderProps {
-  events: Event[];
-  handlePrevPeriod: () => void;
-  handleNextPeriod: () => void;
-  periodInfo?: string;
-}
-
-export const EventSlider = ({
-  events,
-  handlePrevPeriod,
-  handleNextPeriod,
-  periodInfo,
-}: EventSliderProps) => {
+export const EventSlider: React.FC<CustomSliderProps> = ({ items, periodSlidingSettings }) => {
   const prevSlideButtonRef = useRef<HTMLButtonElement | null>(null);
   const nextSlideButtonRef = useRef<HTMLButtonElement | null>(null);
 
@@ -51,16 +40,25 @@ export const EventSlider = ({
   return (
     <div className={s.sliderContainer}>
       <div className={s.controlsWrapper}>
-        {periodInfo && <span>{periodInfo}</span>}
+        {periodSlidingSettings?.periodInfo && <span>{periodSlidingSettings?.periodInfo}</span>}
         <div className={s.buttonsBlock}>
-          <Button onClick={handlePrevPeriod} className={s.controlButton}>
+          <Button
+            onClick={periodSlidingSettings?.handlePrevPeriod}
+            className={s.controlButton}
+            disabled={periodSlidingSettings?.isPrevDisabled}
+          >
             {'<'}
           </Button>
-          <Button onClick={handleNextPeriod} className={s.controlButton}>
+          <Button
+            onClick={periodSlidingSettings?.handleNextPeriod}
+            className={s.controlButton}
+            disabled={periodSlidingSettings?.isNextDisabled}
+          >
             {'>'}
           </Button>
         </div>
       </div>
+
       <Button ref={prevSlideButtonRef} className={s.prevButton} variant={'secondary'}>
         {'<'}
       </Button>
@@ -69,7 +67,7 @@ export const EventSlider = ({
       </Button>
 
       <Swiper {...sliderSettings}>
-        {events.map((item) => (
+        {items.map((item) => (
           <SwiperSlide key={item.id}>
             <div className={s.eventItem}>
               <h3>{item.title}</h3>
