@@ -1,5 +1,5 @@
 .sliderContainer {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
@@ -40,8 +40,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   height: 160px;
-  min-width: 320px;
-  max-width: 420px;
+  max-width: 320px;
   box-sizing: border-box;
   padding: 10px;
   cursor:pointer;
@@ -85,10 +84,22 @@
 }
 
 .prevButton {
-  left: -80px;
+  left: -60px;
+  @media (max-width: 920px) {
+    left: -60px;
+  }
+  @media (max-width: 768px) {
+    left: -40px;
+  }
 }
 .nextButton {
-  right: -80px;
+  right: -60px;
+  @media (max-width: 920px) {
+    right: -40px;
+  }
+  @media (max-width: 768px) {
+    right: -40px;
+  }
 }
 .disabled {
   visibility: hidden;

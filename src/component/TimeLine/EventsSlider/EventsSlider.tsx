@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide, SwiperProps } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -7,6 +7,7 @@ import s from './EventsSlider.module.scss';
 import { Button } from '@/component/ui/button';
 import { Event } from '@/db/db.types';
 import { PeriodSlidingSettings } from '@/component/TimeLine/TimeLine';
+import { Modal } from '@/component/ui/modal';
 
 interface BaseProps {
   items: Event[];
@@ -35,13 +36,20 @@ export const EventSlider: React.FC<CustomSliderProps> = ({
   const sliderSettings: SwiperProps = {
     modules: [Navigation],
     spaceBetween: 20,
-    slidesPerView: 3,
     navigation: {
       prevEl: prevSlideButtonRef.current,
       nextEl: nextSlideButtonRef.current,
       disabledClass: s.disabled,
     },
     loop: false,
+    breakpoints: {
+      920: {
+        slidesPerView: 3,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+    },
     onInit: (swiper) => {
       if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
         swiper.params.navigation.prevEl = prevSlideButtonRef.current;
@@ -50,6 +58,14 @@ export const EventSlider: React.FC<CustomSliderProps> = ({
         swiper.navigation.update();
       }
     },
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+
+  const handleSlideClick = (event: Event) => {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
   };
 
   return (
@@ -86,13 +102,23 @@ export const EventSlider: React.FC<CustomSliderProps> = ({
       <Swiper {...sliderSettings}>
         {items.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className={s.eventItem}>
+            <div className={s.eventItem} onClick={() => handleSlideClick(item)}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={selectedEvent?.title || 'Event Details'}
+      >
+        <div className={s.modalContent}>
+          <p>{selectedEvent?.description}</p>
+        </div>
+      </Modal>
     </div>
   );
 };

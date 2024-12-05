@@ -1,3 +1,4 @@
+@use 'sass:math';
 :root {
   --font-family-regular: "PT Sans", sans-serif;
   --font-family-second-regular: "Bebas Neue", sans-serif;
@@ -6,4 +7,11 @@
   --font-weight-regular: 400 ;
   --font-weight-bold: 700;
 
+}
+
+
+@function fluid-font-size($fmin, $fmax) {
+  @return calc(
+          (100vw - 360px) / (1440 - 360) * (math.div(($fmax - $fmin), 1px)) + #{$fmin}
+  );
 }
