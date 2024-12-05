@@ -8,12 +8,27 @@ import { Button } from '@/component/ui/button';
 import { Event } from '@/db/db.types';
 import { PeriodSlidingSettings } from '@/component/TimeLine/TimeLine';
 
-interface CustomSliderProps {
+interface BaseProps {
   items: Event[];
-  periodSlidingSettings?: PeriodSlidingSettings;
 }
 
-export const EventSlider: React.FC<CustomSliderProps> = ({ items, periodSlidingSettings }) => {
+interface SlidingEnabledProps extends BaseProps {
+  isPeriodSlidingEnabled: true;
+  periodSlidingSettings: PeriodSlidingSettings;
+}
+
+interface SlidingDisabledProps extends BaseProps {
+  isPeriodSlidingEnabled?: false;
+  periodSlidingSettings?: never;
+}
+
+type CustomSliderProps = SlidingEnabledProps | SlidingDisabledProps;
+
+export const EventSlider: React.FC<CustomSliderProps> = ({
+  items,
+  isPeriodSlidingEnabled = false,
+  periodSlidingSettings,
+}) => {
   const prevSlideButtonRef = useRef<HTMLButtonElement | null>(null);
   const nextSlideButtonRef = useRef<HTMLButtonElement | null>(null);
 
@@ -39,25 +54,27 @@ export const EventSlider: React.FC<CustomSliderProps> = ({ items, periodSlidingS
 
   return (
     <div className={s.sliderContainer}>
-      <div className={s.controlsWrapper}>
-        {periodSlidingSettings?.periodInfo && <span>{periodSlidingSettings?.periodInfo}</span>}
-        <div className={s.buttonsBlock}>
-          <Button
-            onClick={periodSlidingSettings?.handlePrevPeriod}
-            className={s.controlButton}
-            disabled={periodSlidingSettings?.isPrevDisabled}
-          >
-            {'<'}
-          </Button>
-          <Button
-            onClick={periodSlidingSettings?.handleNextPeriod}
-            className={s.controlButton}
-            disabled={periodSlidingSettings?.isNextDisabled}
-          >
-            {'>'}
-          </Button>
+      {isPeriodSlidingEnabled && (
+        <div className={s.controlsWrapper}>
+          {periodSlidingSettings?.periodInfo && <span>{periodSlidingSettings?.periodInfo}</span>}
+          <div className={s.buttonsBlock}>
+            <Button
+              onClick={periodSlidingSettings?.handlePrevPeriod}
+              className={s.controlButton}
+              disabled={periodSlidingSettings?.isPrevDisabled}
+            >
+              {'<'}
+            </Button>
+            <Button
+              onClick={periodSlidingSettings?.handleNextPeriod}
+              className={s.controlButton}
+              disabled={periodSlidingSettings?.isNextDisabled}
+            >
+              {'>'}
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
 
       <Button ref={prevSlideButtonRef} className={s.prevButton} variant={'secondary'}>
         {'<'}

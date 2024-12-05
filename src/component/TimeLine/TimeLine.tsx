@@ -48,7 +48,11 @@ export const Timeline: FC<TimelineProps> = ({ periods }) => {
       />
 
       {activePeriod && (
-        <EventSlider items={activePeriod.events} periodSlidingSettings={periodSlidingSettings} />
+        <EventSlider
+          items={activePeriod.events}
+          isPeriodSlidingEnabled
+          periodSlidingSettings={periodSlidingSettings}
+        />
       )}
     </div>
   );
