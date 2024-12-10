@@ -2,7 +2,8 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide, SwiperProps } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
 import s from './EventsSlider.module.scss';
 import { Button } from '@/component/ui/button';
 import { Event } from '@/db/db.types';
@@ -34,20 +35,36 @@ export const EventSlider: React.FC<CustomSliderProps> = ({
   const nextSlideButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const sliderSettings: SwiperProps = {
-    modules: [Navigation],
+    modules: [Navigation, Pagination], // Подключаем оба модуля
     spaceBetween: 20,
     navigation: {
       prevEl: prevSlideButtonRef.current,
       nextEl: nextSlideButtonRef.current,
       disabledClass: s.disabled,
     },
+    pagination: {
+      clickable: true,
+      dynamicBullets: true,
+    },
     loop: false,
     breakpoints: {
       920: {
         slidesPerView: 3,
+        navigation: {
+          enabled: true,
+        },
+        pagination: {
+          enabled: false,
+        },
       },
-      480: {
+      580: {
         slidesPerView: 2,
+        navigation: {
+          enabled: false,
+        },
+        pagination: {
+          enabled: true,
+        },
       },
     },
     onInit: (swiper) => {

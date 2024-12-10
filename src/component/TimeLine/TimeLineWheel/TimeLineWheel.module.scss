@@ -1,10 +1,10 @@
-//.timelineCircleWrapper {
-//  display: flex;
-//  flex-direction: column;
-//  align-items: center;
-//  justify-content: center;
-//}
 @use '@/styles/_typography.scss';
+//.timelineCircleWrapper {
+//  @media screen and (max-width: 590px) {
+//    display: none;
+//  }
+//}
+
 .timelineCircle {
   position: relative;
   display: flex;
@@ -15,6 +15,7 @@
   border: 1px solid var(--color-secondary-op02);
   border-radius: 50%;
   margin-bottom: 20px;
+
 
 }
 
@@ -58,8 +59,7 @@
   top: calc(50% - 104px);
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: typography.fluid-font-size(100px, 200px);;
-  //font-size: 200px;
+  font-size: typography.fluid-font-size(80px, 200px);;
   font-weight: var(--font-weight-bold);
   line-height: 80%;
   text-align: center;
@@ -76,4 +76,23 @@
   .endDate {
     color: var(--color-accent-3);
   }
+}
+@media screen and (max-width: 590px) {
+  .timelineCircle {
+    display: none;
+  }
+
+  .periodDetails {
+    position: fixed;
+    top: 12.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    justify-content: space-around;
+    z-index: 10;
+    gap: 20px;
+  }
+
 }

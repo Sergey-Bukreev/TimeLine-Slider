@@ -31,6 +31,7 @@
       height: 50px;
     }
   }
+
 }
 
 .eventItem {
@@ -40,10 +41,14 @@
   align-items: flex-start;
   justify-content: flex-start;
   height: 160px;
-  max-width: 320px;
+  min-width: 300px;
+  max-width: 420px;
   box-sizing: border-box;
   padding: 10px;
   cursor:pointer;
+  @media screen and (max-width: 590px) {
+    height: auto;
+  }
 
   h3 {
     font-family: var(--font-family-second-regular), sans-serif;
@@ -81,25 +86,17 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  @media (max-width: 920px) {
+    display: none !important;
+  }
 }
 
 .prevButton {
   left: -60px;
-  @media (max-width: 920px) {
-    left: -60px;
-  }
-  @media (max-width: 768px) {
-    left: -40px;
-  }
+
 }
 .nextButton {
   right: -60px;
-  @media (max-width: 920px) {
-    right: -40px;
-  }
-  @media (max-width: 768px) {
-    right: -40px;
-  }
 }
 .disabled {
   visibility: hidden;

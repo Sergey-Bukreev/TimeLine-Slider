@@ -1,4 +1,4 @@
-
+@use '@/styles/_typography.scss';
 .timeLine {
   position: relative;
   display: flex;
@@ -20,6 +20,22 @@
     line-height: 120%;
     color: var(--color-seconary);
     margin-left: 100px;
+    @media screen and (max-width: 920px) {
+      top: 4%;
+    }
+    @media screen and (max-width: 590px) {
+      position: fixed;
+      top: 0;
+      left: 75%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 10px 0;
+      width: 100%;
+      justify-content: space-around;
+      z-index: 10;
+      gap: 20px;
+
+    }
 
 
   }
@@ -33,6 +49,12 @@
     top: 0;
     transform: translateX(-50%);
     z-index: 1;
+    @media screen and (max-width: 590px) {
+      display: none;
+    }
+  }
+  .label {
+    font-size: typography.fluid-font-size(24px, 56px);
   }
 }
 
@@ -42,6 +64,9 @@
   position: absolute;
   background-color: rgba(66, 86, 122, 0.1);
   z-index: 0;
+  @media screen and (max-width: 590px) {
+    display: none;
+  }
 }
 
 .timeLine::before {
