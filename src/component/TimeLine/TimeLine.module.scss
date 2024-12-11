@@ -9,55 +9,43 @@
   height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  .topBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 50%;
+    width: 100%;
 
-  .labelWrapper {
-    position: absolute;
-    left: 0;
-    top: 12.5%;
-    width: 354px;
-    font-weight: var(--font-weight-bold);
-    font-size: 56px;
-    line-height: 120%;
-    color: var(--color-seconary);
-    margin-left: 100px;
-    @media screen and (max-width: 920px) {
-      top: 4%;
-    }
     @media screen and (max-width: 590px) {
-      position: fixed;
-      top: 0;
-      left: 75%;
-      transform: translateX(-50%);
-      margin: 0;
-      padding: 10px 0;
-      width: 100%;
-      justify-content: space-around;
-      z-index: 10;
-      gap: 20px;
-
+      justify-content: center;
+      border-bottom: 2px solid var(--color-secondary-op05);
     }
-
 
   }
-  .labelWrapper::before {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--color-accent-2), var(--color-accent-3));
-    left: -100px;
-    top: 0;
-    transform: translateX(-50%);
-    z-index: 1;
-    @media screen and (max-width: 590px) {
-      display: none;
+  .botBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+
+    justify-content: end;
+
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
     }
-  }
-  .label {
-    font-size: typography.fluid-font-size(24px, 56px);
+
+    @media screen and (max-width: 768px) {
+      justify-content: end;
+    }
+
+    @media screen and (max-width: 590px) {
+      justify-content: start;
+
+    }
   }
 }
-
 .timeLine::before,
 .timeLine::after {
   content: '';
@@ -80,3 +68,40 @@
   width: 1px;
   left: 50%;
 }
+.labelWrapper {
+  position: absolute;
+  top: 12.5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  font-weight: var(--font-weight-bold);
+  font-size: 56px;
+  line-height: 120%;
+  color: var(--color-seconary);
+  margin-left: 100px;
+
+  span {
+    font-size: typography.fluid-font-size(24px, 56px);
+  }
+
+  @media screen and (max-width: 768px) {
+    top: 8%
+  }
+
+  @media screen and (max-width: 590px) {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    flex-direction: row;
+    margin: 0;
+    transform: translateX(-50%);
+    padding: 10px 0;
+    width: 100%;
+    justify-content: center;
+    z-index: 10;
+    gap: 10px;
+    }
+
+  }

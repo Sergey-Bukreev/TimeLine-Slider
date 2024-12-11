@@ -44,11 +44,11 @@ export const EventSlider: React.FC<CustomSliderProps> = ({
     },
     pagination: {
       clickable: true,
-      dynamicBullets: true,
+      dynamicBullets: false,
     },
     loop: false,
     breakpoints: {
-      920: {
+      1025: {
         slidesPerView: 3,
         navigation: {
           enabled: true,
@@ -57,8 +57,26 @@ export const EventSlider: React.FC<CustomSliderProps> = ({
           enabled: false,
         },
       },
-      580: {
+      1024: {
+        slidesPerView: 3,
+        navigation: {
+          enabled: false,
+        },
+        pagination: {
+          enabled: true,
+        },
+      },
+      768: {
         slidesPerView: 2,
+        navigation: {
+          enabled: false,
+        },
+        pagination: {
+          enabled: true,
+        },
+      },
+      360: {
+        slidesPerView: 1,
         navigation: {
           enabled: false,
         },
