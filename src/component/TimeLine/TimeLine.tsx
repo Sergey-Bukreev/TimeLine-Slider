@@ -36,24 +36,28 @@ export const Timeline: FC<TimelineProps> = ({ periods }) => {
   };
   return (
     <div className={s.timeLine}>
-      <div className={s.labelWrapper}>
-        <span className={s.label}>{'Исторические даты'}</span>
-      </div>
-      <TimelineWheel
-        periods={periods}
-        activePeriod={activePeriod!}
-        onChangePeriod={handlePeriodChange}
-        rotationAngle={rotationAngle}
-        ref={circleRef}
-      />
-
-      {activePeriod && (
-        <EventSlider
-          items={activePeriod.events}
-          isPeriodSlidingEnabled
-          periodSlidingSettings={periodSlidingSettings}
+      <div className={s.topBox}>
+        <div className={s.labelWrapper}>
+          <span>{'Исторические'}</span>
+          <span>{'даты'}</span>
+        </div>
+        <TimelineWheel
+          periods={periods}
+          activePeriod={activePeriod!}
+          onChangePeriod={handlePeriodChange}
+          rotationAngle={rotationAngle}
+          ref={circleRef}
         />
-      )}
+      </div>
+      <div className={s.botBox}>
+        {activePeriod && (
+          <EventSlider
+            items={activePeriod.events}
+            isPeriodSlidingEnabled
+            periodSlidingSettings={periodSlidingSettings}
+          />
+        )}
+      </div>
     </div>
   );
 };
